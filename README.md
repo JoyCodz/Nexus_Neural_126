@@ -2,6 +2,11 @@
 
 **Vision Intelligence for Safe Terrain Autonomy**
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-ugv--vista.cappace.me-brightgreen?style=flat-square)](https://ugv-vista.cappace.me/)
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat-square)](LICENSE)
+
+> 🌐 **Live Operator Console:** [https://ugv-vista.cappace.me/](https://ugv-vista.cappace.me/)
+
 GPS-independent A→B navigation for an Ackermann unmanned ground vehicle.
 This repository ships a **software-in-the-loop (SIL) operator console**: the geometric stack
 (RANSAC, traversability, A\*/Dijkstra, Ackermann local planner, Pure Pursuit, ByteTrack/Kalman,
@@ -12,13 +17,12 @@ with documented SIL substitutes — they are not trained weights.
 Navigation is performed in a **local SLAM coordinate frame**.
 Origin at startup is `X=0, Y=0, Yaw=0`. Goals are metres in that frame, never latitude/longitude.
 
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-
 ---
 
 ## Operator Console
 
-Open the app and either initialise SLAM or run the A→B demonstration.
+Access the live console at **[ugv-vista.cappace.me](https://ugv-vista.cappace.me/)** or run it locally.
+Initialise SLAM or run the A→B demonstration:
 
 - Click the local map to set Point B, or enter X/Y coordinates directly.
 - Start autonomy — the safety supervisor can reject any command.
