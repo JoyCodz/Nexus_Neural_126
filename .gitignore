@@ -1,0 +1,15 @@
+node_modules/
+.project_id
+.github_repo
+.env
+.env.*
+
+# Grok sandbox runtime — not needed outside the sandbox
+.grok/
+.vercel/
+.tanstack/
+.node_modules.lock
+screenshots/
+artifacts/
+startup.sh
+AGENTS.md

@@ -1,0 +1,96 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --color-background: #0c0d0f;
+  --color-foreground: #e6e3dc;
+  --color-card: #14161a;
+  --color-card-2: #1b1e24;
+  --color-muted: #8b9098;
+  --color-faint: #5c6168;
+  --color-border: #2a2e34;
+  --color-accent: #b9c4ce;
+  --color-accent-foreground: #0c0d0f;
+  --color-go: #7d9a86;
+  --color-stop: #c46b5d;
+  --color-warn: #c4a574;
+  --color-info: #7a93a6;
+  --color-ring: #b9c4ce;
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  * {
+    border-color: var(--color-border);
+  }
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-background);
+    color: var(--color-foreground);
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.panel {
+  background: var(--color-card);
+  border: 1px solid color-mix(in oklab, var(--color-foreground) 10%, transparent);
+  border-radius: var(--radius-lg);
+}
+.panel-inner {
+  border-radius: var(--radius-md);
+  background: var(--color-card-2);
+}
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+.scanline {
+  position: relative;
+}
+.scanline::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 2px,
+    color-mix(in oklab, var(--color-foreground) 4%, transparent) 2px 3px
+  );
+  opacity: 0.35;
+  border-radius: inherit;
+}
